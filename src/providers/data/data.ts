@@ -38,10 +38,8 @@ export class DataProvider {
       .map(response => response.json());
   }
 
-  getGenres(genre) {
-    let genre_id = genre;
-
-    return this.http.get('https://igdbcom-internet-game-database-v1.p.mashape.com/genres/'+genre_id+'?fields=*', this.options)
+  getGenres() {
+    return this.http.get('https://igdbcom-internet-game-database-v1.p.mashape.com/genres/?fields=*', this.options)
       .map(response => response.json());
   }
 

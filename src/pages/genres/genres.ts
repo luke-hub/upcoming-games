@@ -16,12 +16,13 @@ import { DataProvider } from '../../providers/data/data';
 })
 export class GenresPage {
 
-  genre_id: Array<any>;
+  genres: Array<any>;
   currentGenre: any;
 
   constructor(public navCtrl: NavController, public navParams: NavParams, private storage: Storage, public viewCtrl: ViewController,private _data: DataProvider) {
   
-    this.genre_id = navParams.get("genres");
+    this._data.getGenres()
+      .subscribe(res=> this.genres = res);
 
   }
 
